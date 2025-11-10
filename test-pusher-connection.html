@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pusher Connection Test</title>
+  <script src="https://js.pusher.com/8.4.0-rc2/pusher.min.js"></script>
+</head>
+<body>
+  <h1>Pusher WebSocket Connection Test</h1>
+  <div id="status">Testing connection...</div>
+  <div id="log"></div>
+
+  <script>
+    // Enable Pusher logging - this will help debug WebSocket issues
+    Pusher.logToConsole = true;
+
+    const pusher = new Pusher('2f57459f215265543a03', {
+      cluster: 'ap2',
+      forceTLS: true,
+      enabledTransports: ['ws', 'wss'],
+      disabledTransports: ['sockjs', 'xhr_polling', 'xhr_streaming']
+    });
+
+    const statusDiv = document.getElementById('status');
+    const logDiv = document.getElementById('log');
+
+    function log(message) {
+      console.log(message);
+      logDiv.innerHTML += `<p>${new Date().toISOString()}: ${message}</p>`;
+    }
+
+    pusher.connection.bind('connecting', () => {
+      statusDiv.textContent = '🔄 Connecting to Pusher...';
+      statusDiv.style.color = 'orange';
+      log('Connecting to Pusher WebSocket...');
+    });
+
+    pusher.connection.bind('connected', () => {
+      statusDiv.textContent = '✅ Connected to Pusher!';
+      statusDiv.style.color = 'green';
+      log('Successfully connected to Pusher!');
+      
+      // Subscribe to channel
+      const channel = pusher.subscribe('pulse');
+      
+      channel.bind('pusher:subscription_succeeded', () => {
+        log('Successfully subscribed to "pulse" channel');
+      });
+
+      channel.bind('token.created', (data) => {
+        log('Received token.created event: ' + JSON.stringify(data));
+      });
+    });
+
+    pusher.connection.bind('disconnected', () => {
+      statusDiv.textContent = '⚠️ Disconnected from Pusher';
+      statusDiv.style.color = 'red';
+      log('Disconnected from Pusher');
+    });
+
+    pusher.connection.bind('error', (err) => {
+      statusDiv.textContent = '❌ Pusher connection error';
+      statusDiv.style.color = 'red';
+      log('Pusher error: ' + JSON.stringify(err));
+    });
+
+    pusher.connection.bind('state_change', (states) => {
+      log(`State changed: ${states.previous} -> ${states.current}`);
+    });
+  </script>
+</body>
+</html>
