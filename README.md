@@ -2,7 +2,19 @@
 
 A pixel-perfect replica of Axiom Trade's trading interface built with modern web technologies.
 
-## íº€ Features
+## ğŸ“¸ Screenshots
+
+### Trading Table View
+
+![Trading Table](https://github.com/Mr-Bathwal/Axiom-trade-pulse_Clone/raw/main/public/screenshots/table_pagee.png)
+_Real-time trading table with live price updates, sortable columns, and quick trade actions_
+
+### Pulse Page View
+
+![Pulse Page](https://github.com/Mr-Bathwal/Axiom-trade-pulse_Clone/raw/main/public/screenshots/pulse_pagee.png)
+_Token categorization with New Pairs, Final Stretch, and Migrated sections_
+
+## ğŸš€ Features
 
 - **Real-time Trading Table** - Live price updates with TanStack Table
 - **Advanced State Management** - Redux Toolkit for complex state logic
@@ -13,7 +25,7 @@ A pixel-perfect replica of Axiom Trade's trading interface built with modern web
 - **Responsive Design** - Mobile-first approach with Tailwind CSS
 - **Dark Theme** - Sleek, modern dark interface matching Axiom's design
 
-## í» ï¸ Tech Stack
+## ï¿½ï¿½ï¿½ï¸ Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
@@ -24,7 +36,7 @@ A pixel-perfect replica of Axiom Trade's trading interface built with modern web
 - **Animations**: Framer Motion
 - **APIs**: Moralis Token API (ready to integrate)
 
-## í³¦ Installation
+## ï¿½ï¿½ï¿½ Installation
 
 ```bash
 # Install dependencies
@@ -40,7 +52,7 @@ npm run build
 npm start
 ```
 
-## í´§ Configuration
+## ï¿½ï¿½ï¿½ Configuration
 
 ### API Keys
 
@@ -56,7 +68,7 @@ NEXT_PUBLIC_PUSHER_KEY=your_pusher_key
 NEXT_PUBLIC_PUSHER_CLUSTER=your_pusher_cluster
 ```
 
-## í³ Project Structure
+## ï¿½ï¿½ï¿½ Project Structure
 
 ```
 axiom-trade-clone/
@@ -82,16 +94,17 @@ axiom-trade-clone/
 
 ```
 
-## í¾¨ Design Philosophy
+## ï¿½ï¿½ï¿½ Design Philosophy
 
 - **Code Reusability**: Modular components, shared utilities
 - **Performance**: Virtual scrolling, memoization, optimized renders
 - **Accessibility**: ARIA labels, keyboard navigation, screen reader support
 - **Maintainability**: Clear structure, TypeScript, comprehensive comments
 
-## í³Š Features Breakdown
+## ï¿½ï¿½ï¿½ Features Breakdown
 
 ### Trading Table
+
 - Sortable columns
 - Real-time price updates (every 3s)
 - Animated price changes
@@ -99,17 +112,19 @@ axiom-trade-clone/
 - Quick trade buttons
 
 ### State Management
+
 - **Redux Toolkit**: Complex table state, selected tokens
 - **React Query**: API caching, automatic refetching, error handling
 
 ### UI/UX
+
 - Smooth fade-in animations
 - Gradient backgrounds
 - Hover effects
 - Responsive grid layouts
 - Loading skeletons
 
-## í´„ Real-time Updates
+## ï¿½ï¿½ï¿½ Real-time Updates
 
 Currently uses mock data with simulated price changes. To integrate real APIs:
 
@@ -117,7 +132,7 @@ Currently uses mock data with simulated price changes. To integrate real APIs:
 2. **Pusher**: Add WebSocket connection in `components/table/trading-table.tsx`
 3. **The Graph**: Optional for deep DEX data
 
-## íº€ Deployment
+## ï¿½ï¿½ï¿½ Deployment
 
 ```bash
 # Build optimized production bundle
@@ -130,7 +145,7 @@ vercel deploy
 npm start
 ```
 
-## í³ˆ Performance Optimizations
+## ï¿½ï¿½ï¿½ Performance Optimizations
 
 - React Query caching (1 min stale time)
 - TanStack Table virtual scrolling
@@ -139,7 +154,7 @@ npm start
 - Image optimization
 - Font optimization
 
-## í¾¯ Assignment Requirements Met
+## ï¿½ï¿½ï¿½ Assignment Requirements Met
 
 âœ… Pixel-perfect Axiom Trade replica  
 âœ… shadcn/ui + TanStack Table  
@@ -150,9 +165,9 @@ npm start
 âœ… Type-safe TypeScript  
 âœ… Reusable component architecture  
 âœ… Clean, maintainable code  
-âœ… Production-ready setup  
+âœ… Production-ready setup
 
-## í³ License
+## ï¿½ï¿½ï¿½ License
 
 MIT License - Feel free to use for learning and portfolio projects.
 
